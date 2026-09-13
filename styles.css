@@ -22,3 +22,17 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:lin
 .trade,.due{background:#f6f1ff;color:#24163f;border-left:4px solid var(--orange);box-shadow:0 8px 24px #0003}
 .trade strong,.trade b,.due strong,.due b{color:#5b2bbd}
 .trade .muted,.due .muted{color:#594b73}
+
+
+/* Global readability pass */
+:root{--muted:#c4badf}
+body{font-size:15px;line-height:1.6}
+.card p,.card li,.card td,.card th,.card label,.card small{color:#e7e0f5}
+.card small,.chart-source,.legend,.cityrank small{font-size:13px;color:#c4badf}
+.chart svg text,.chart text,.visual-chart text{fill:#e7e0f5!important;font-size:13px}
+.chart svg line,.chart svg path[stroke]{stroke:#8f7db7}
+.chart svg circle{filter:drop-shadow(0 0 5px currentColor)}
+.status.ok{background:#dffaf0;color:#153d35}.status.loading{background:#fff2c7;color:#4a3500}.status.error{background:#ffe1dc;color:#591b14}
+.trade,.due{font-size:15px;line-height:1.55}.trade strong,.trade b,.due strong,.due b{color:#4d218f}
+.kpi span,.kpi small{color:#d9d0ed}.metric small,.liveMetrics small{color:#cfc5e3}
+th{color:#d9d0ed}td{color:#eee8fa}.badge{font-size:11px}
