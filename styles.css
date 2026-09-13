@@ -36,3 +36,12 @@ body{font-size:15px;line-height:1.6}
 .trade,.due{font-size:15px;line-height:1.55}.trade strong,.trade b,.due strong,.due b{color:#4d218f}
 .kpi span,.kpi small{color:#d9d0ed}.metric small,.liveMetrics small{color:#cfc5e3}
 th{color:#d9d0ed}td{color:#eee8fa}.badge{font-size:11px}
+
+
+/* Graph focus panel */
+.priceChart{background:linear-gradient(145deg,#21183d,#17102d);border:1px solid #59458a;border-radius:14px;padding:18px 20px;box-shadow:inset 0 1px #ffffff12}
+.priceChart svg{background:linear-gradient(180deg,#2a2050,#1b1536);border-radius:10px}
+.priceChart text,.priceChart .axislabel{fill:#fff;color:#fff;font-weight:600}
+.priceChart .legend,.priceChart .chart-source{color:#eee7ff}
+.priceChart line{stroke:#7767a5;stroke-width:1}
+.priceChart circle{stroke:#fff;stroke-width:2}
