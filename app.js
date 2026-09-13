@@ -118,3 +118,11 @@ document.querySelector('#chatForm').onsubmit=e=>{e.preventDefault();const input=
   });
  }
 })();
+
+/* Keep every interactive view in English after data re-renders */
+(()=>{
+ const labels=['Overview','Pricing & demand','Market & channels','Stakeholder view'];
+ const hints=['Summary of the key statistics and recommendation','Test the price and observe acceptance','Compare market opportunity, sales and channels','Prepare the stakeholder decision'];
+ const apply=()=>{const ex=document.querySelector('.page-explorer');if(!ex)return;const actions=[...ex.querySelectorAll('.page-actions button')];actions.forEach((b,i)=>{if(labels[i]){b.textContent=labels[i];b.setAttribute('aria-label','Open '+labels[i]);}});document.querySelectorAll('.tabs button').forEach((b,i)=>{if(labels[i]){b.textContent=labels[i];b.setAttribute('aria-label','Open '+labels[i]);}});const active=document.querySelector('.tabs button.active');const i=Math.max(0,document.querySelectorAll('.tabs button').length?([...document.querySelectorAll('.tabs button')].indexOf(active)):0);const title=ex.querySelector('#pageTitle'),hint=ex.querySelector('#pageHint');if(title)title.textContent=labels[i]||labels[0];if(hint)hint.textContent=hints[i]||hints[0];document.querySelectorAll('.page-footer button').forEach(b=>{if(b.dataset.prev!==undefined)b.textContent='← Previous view';if(b.dataset.next!==undefined)b.textContent=b.dataset.next==='0'?'Back to overview ↗':'Next view →';});};
+ new MutationObserver(apply).observe(document.body,{childList:true,subtree:true});apply();
+})();
