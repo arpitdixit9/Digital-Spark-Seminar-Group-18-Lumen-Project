@@ -89,3 +89,18 @@ th,td{border-color:#514675}.good{color:#8ee3d5}.warn{color:#f3b1d8}
 .page-explorer{background:#282343;border-color:#65578a}.page-explorer strong{color:#fff}.page-explorer small{color:#d5cdec}
 .stat-link:hover,.stat-link:focus{border-color:#d2b9ff}
 .chart svg text,.chart text,.visual-chart text{fill:#f0ebfb!important}
+
+
+/* Final UI polish: calmer Twitch-inspired dashboard */
+:root{--paper:#100d1d;--card:#1b1730;--line:#3b315b;--ink:#faf8ff;--muted:#c9c1df;--teal:#a970ff;--orange:#62e6e0;--gold:#f0b7ff}
+body{background:radial-gradient(900px 420px at 8% -8%,#4a2775 0%,transparent 65%),linear-gradient(180deg,#100d1d,#0b0914 80%);letter-spacing:.005em}
+.shell{max-width:1320px;padding:34px 30px 80px}
+header{padding:22px 24px;border:1px solid #493b70;border-radius:22px;background:linear-gradient(120deg,#211942cc,#17132acc);box-shadow:0 20px 55px #05030c99}
+.eyebrow{color:#8ff4ec;text-shadow:none}.lede{font-size:17px;max-width:760px;color:#d8d1eb}h1{font-size:clamp(32px,5vw,58px);line-height:1.02;text-shadow:none}h2{font-size:22px}
+.card{border-radius:20px;padding:24px;background:linear-gradient(145deg,#211b3b,#17132a);border-color:#493b70;box-shadow:0 14px 35px #05030c66;backdrop-filter:none}.card:before{background:linear-gradient(90deg,transparent,#a970ff,#62e6e0,transparent);opacity:.7}
+.hero{background:linear-gradient(135deg,#33215b,#1a1530);border-top-color:#62e6e0}.hero h2{font-size:28px}.metric,.kpi,.note,.simulation,.pair,.chat-messages,.liveMetrics div{background:#2a2347;border-color:#554777}.metric b,.kpi b,.liveMetrics b{color:#9ff7ef;text-shadow:none}
+.tabs{position:sticky;top:10px;z-index:5;padding:8px;border:1px solid #493b70;border-radius:14px;background:#141025eF;backdrop-filter:blur(12px)}.tabs button,.toggle button,.chat-suggestions button,.pc,.page-actions button,.page-footer button{min-height:42px;background:#282143;color:#e9e3f8;border-color:#625386;font-weight:650}.tabs button.active,.toggle button.active,.primary,.chat-form button,.page-actions button.active{background:linear-gradient(135deg,#9a63eb,#6946c7);box-shadow:0 8px 18px #7e55d455}.tabs button:focus-visible,.toggle button:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #8ff4ec;outline-offset:2px}
+.grid{gap:20px}.chart,.visual-chart{background:#141025;border:1px solid #493b70;border-radius:14px;padding:14px}.chart svg text,.chart text,.visual-chart text{fill:#f3efff!important;font-size:14px}.chart svg line,.chart svg path[stroke]{stroke:#8c7bad}.map{background:linear-gradient(135deg,#282047,#20394a);border-color:#625386}.bar,.rangebar{background:#554873}.bar i{background:linear-gradient(90deg,#a970ff,#62e6e0);box-shadow:none}.trade,.due{background:#f7f1ff;color:#24163f;border-left-color:#62e6e0}.trade strong,.trade b,.due strong,.due b{color:#5a2da0}.chat-message.bot{background:#282143;border-color:#625386}.chat-form input{background:#282143;border-color:#625386;color:#fff}.status.ok{background:#dffaf0;color:#153d35}.status.loading{background:#fff2c7;color:#4a3500}.status.error{background:#ffe1dc;color:#591b14}
+.evidence,.liveMetrics{gap:14px}.kpi{padding:18px}.kpi b{font-size:30px}.page-explorer{background:#211b3b;border-color:#554777}.page-actions{gap:10px}.page-footer{border-top-color:#493b70}
+@media(max-width:800px){.shell{padding:18px 14px 50px}header{padding:20px 18px}.tabs{position:static}.card{padding:18px}.evidence,.liveMetrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.hero .rec,.evidence,.liveMetrics{grid-template-columns:1fr}.chart-row{grid-template-columns:95px 1fr 48px}.page-actions button,.page-footer button{width:100%}}
