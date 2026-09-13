@@ -45,3 +45,7 @@ th{color:#d9d0ed}td{color:#eee8fa}.badge{font-size:11px}
 .priceChart .legend,.priceChart .chart-source{color:#eee7ff}
 .priceChart line{stroke:#7767a5;stroke-width:1}
 .priceChart circle{stroke:#fff;stroke-width:2}
+
+
+/* Twitch-inspired, refined visual balance */
+body{background:#0e0b18;color:#f3effb}body:before{opacity:.28;background-size:48px 48px}h1{ text-shadow:none;letter-spacing:-.035em }.eyebrow{ text-shadow:none;color:#b98cff }.card{background:#171326;border-color:#30264b;box-shadow:0 10px 28px #0004;backdrop-filter:none}.card:before{opacity:.45}.hero{background:#1b1530}.metric,.kpi,.note,.simulation,.pair,.chat-messages,.liveMetrics div{background:#211a38;border-color:#332951}.metric b,.kpi b,.liveMetrics b{color:#c9a7ff;text-shadow:none}.tabs button,.toggle button,.chat-suggestions button,.pc{background:#1b1630;border-color:#3b3057;color:#bdb2d1}.tabs button.active,.toggle button.active,.primary,.chat-form button{background:#914fe8;box-shadow:0 4px 12px #914fe844}.bar i{background:#9b68e8;box-shadow:none}.map{background:#1b1830}.dot span,.dot.lumen span{box-shadow:0 0 0 3px #171326}.chat-message.user{background:#7544c4}.trade,.due{box-shadow:0 6px 16px #0002}
