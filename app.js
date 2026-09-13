@@ -1,6 +1,6 @@
 const files=['channel_economics','competitor_price_history','competitor_prices_by_channel','cost_breakdown','customer_quotes','customer_survey','historical_sales_weekly','market_context','marketing_funnel_monthly','price_sensitivity_survey','price_test_results','seasonality_and_weather'];
 const state={};
-async function load(){for(const f of files){const t=await fetch('data/'+f+'.csv').then(r=>r.text());state[f]=parse(t)};render()}
+async function load(){for(const f of files){const t=await fetch('data/'+f+'.csv').then(r=>r.text());state[f]=parse(t)};renderDataGuide();render()}
 function parse(t){const a=t.trim().split(/\r?\n/).map(x=>{let r=[],q=false,s='';for(const c of x){if(c==='"')q=!q;else if(c===','&&!q){r.push(s);s=''}else s+=c}r.push(s);return r});const h=a.shift();return a.map(x=>Object.fromEntries(h.map((k,i)=>[k,x[i]])))}
 const n=x=>+x||0,eur=x=>'€'+n(x).toFixed(2),pct=x=>n(x).toFixed(1)+'%';
 function render(){renderPricing();renderRec();renderChannels();renderPositioning();renderScenarios();renderRecon();renderCity();renderMarket();renderSales();renderHistory();renderStake();document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button,.tabpane').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')})}
