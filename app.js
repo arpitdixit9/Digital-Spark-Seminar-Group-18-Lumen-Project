@@ -98,3 +98,23 @@ document.querySelector('#chatForm').onsubmit=e=>{e.preventDefault();const input=
  document.querySelectorAll('.tabpane').forEach((pane,i)=>{pane.setAttribute('tabindex','-1');const footer=document.createElement('div');footer.className='page-footer';footer.innerHTML=(i>0?'<button type="button" data-prev="'+(i-1)+'">← Vue précédente</button>':'<span></span>')+(i<tabs.length-1?'<button type="button" data-next="'+(i+1)+'">Vue suivante →</button>':'<button type="button" data-next="0">Retour à l’accueil ↗</button>');pane.appendChild(footer);footer.querySelectorAll('button').forEach(b=>b.onclick=()=>openPage(Number(b.dataset.prev??b.dataset.next)));});
  openPage(0);
 })();
+/* English interface labels */
+(()=>{
+ const labels=['Overview','Pricing & demand','Market & channels','Stakeholder view'];
+ const hints=['Summary of the key statistics and recommendation','Test the price and observe acceptance','Compare market opportunity, sales and channels','Prepare the stakeholder decision'];
+ const explorer=document.querySelector('.page-explorer');
+ const actions=explorer?.querySelectorAll('.page-actions button');
+ if(explorer&&actions?.length){
+  const title=explorer.querySelector('#pageTitle');
+  const hint=explorer.querySelector('#pageHint');
+  actions.forEach((b,i)=>{b.textContent=labels[i]||b.textContent;b.setAttribute('aria-label','Open '+(labels[i]||b.textContent));});
+  const original=[...document.querySelectorAll('.tabs button')];
+  original.forEach((b,i)=>{b.textContent=labels[i]||b.textContent;b.setAttribute('aria-label','Open '+(labels[i]||b.textContent));});
+  if(title)title.textContent=labels[0];
+  if(hint)hint.textContent=hints[0];
+  document.querySelectorAll('.page-footer button').forEach(b=>{
+   if(b.dataset.prev!==undefined)b.textContent='← Previous view';
+   if(b.dataset.next!==undefined)b.textContent=(b.dataset.next==='0'?'Back to overview ↗':'Next view →');
+  });
+ }
+})();
