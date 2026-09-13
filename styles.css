@@ -61,3 +61,31 @@ body{background:#0e0b18;color:#f3effb}body:before{opacity:.28;background-size:48
 
 /* Navigation par pages et statistiques cliquables */
 .page-explorer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:14px 0 12px;padding:16px 18px;border:1px solid #3b3057;border-radius:14px;background:#171326;box-shadow:0 8px 20px #0003}.page-explorer>div:first-child{display:grid;gap:2px}.page-kicker{font-size:10px;letter-spacing:.16em;color:#b98cff;font-weight:800}.page-explorer strong{font-size:20px;color:#f3effb}.page-explorer small{color:#bdb2d1}.page-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.page-actions button,.page-footer button{border:1px solid #463665;background:#211a38;color:#d8ccef;border-radius:9px;padding:9px 12px;cursor:pointer;font:inherit}.page-actions button:hover,.page-footer button:hover,.page-actions button.active{background:#914fe8;border-color:#a873f3;color:#fff}.tabs{display:none}.stat-link{cursor:pointer;transition:transform .18s ease,border-color .18s ease}.stat-link:hover,.stat-link:focus{transform:translateY(-2px);border-color:#a873f3;outline:none}.page-footer{display:flex;justify-content:space-between;gap:12px;margin:24px 0 4px;padding-top:16px;border-top:1px solid #30264b}.page-footer span{min-width:1px}.tabpane{min-height:420px}@media(max-width:800px){.page-explorer{display:block}.page-actions{justify-content:flex-start;margin-top:12px}.page-actions button{flex:1 1 45%}.page-footer{position:relative}.page-footer button{font-size:13px}}
+
+/* Lighter Twitch-inspired palette */
+:root{--ink:#f8f6ff;--muted:#d5cdec;--paper:#17142a;--card:#282343;--line:#514675;--teal:#9b63e8;--orange:#c09af6;--gold:#e0b7ff;--shadow:0 10px 28px #09061466}
+body{background:radial-gradient(circle at 12% 0%,#3a2d68 0,#17142a 42%),#17142a;color:var(--ink)}
+body:before{opacity:.12}
+.card{background:linear-gradient(145deg,#322b52,#25203f);border-color:#65578a;box-shadow:var(--shadow)}
+.card:before{background:linear-gradient(90deg,transparent,#a982eb,#d4b9ff,transparent);opacity:.5}
+.hero{background:linear-gradient(135deg,#40336b,#282143 70%);border-top-color:#c09af6}
+.metric,.kpi,.note,.simulation,.pair,.chat-messages,.liveMetrics div{background:#342c55;border-color:#625486;color:var(--ink)}
+.metric b,.kpi b,.liveMetrics b{color:#e0bfff;text-shadow:none}
+.lede,.muted,.asof,footer{color:#d5cdec}
+.card p,.card li,.card td,.card th,.card label,.card small{color:#f0ebfb}
+.card small,.chart-source,.legend,.cityrank small{color:#d5cdec}
+.tabs button,.toggle button,.chat-suggestions button,.pc,.page-actions button,.page-footer button{background:#342c55;color:#f0ebfb;border-color:#75669a}
+.tabs button:hover,.toggle button:hover,.chat-suggestions button:hover,.page-actions button:hover,.page-footer button:hover{border-color:#d2b9ff;color:#fff}
+.tabs button.active,.toggle button.active,.primary,.chat-form button,.page-actions button.active{background:#9b63e8;color:#fff;box-shadow:0 4px 14px #9b63e866}
+.primary,.chat-form button{border:1px solid #c09af6}
+.tag,.badge{background:#a982eb33;color:#f0ddff}
+.bar,.rangebar{background:#5b4d78}.bar i{background:#c09af6;box-shadow:none}
+.map{background:linear-gradient(135deg,#423962,#333052);border-color:#7869a0}.axis{border-color:#a99acb}
+.dot span{background:#c78ff4;box-shadow:0 0 0 3px #423962}.dot.lumen span{background:#8ee3d5;box-shadow:0 0 0 3px #423962}
+th,td{border-color:#514675}.good{color:#8ee3d5}.warn{color:#f3b1d8}
+.chatbot{border-top-color:#c09af6}.chatbot-badge{background:#a982eb33;color:#f0ddff}.chat-message.bot{background:#342c55;border-color:#75669a}.chat-message.user{background:#8354ca}
+.chat-form input{background:#342c55;border-color:#75669a;color:#fff}.stake{border-top-color:#c09af6}.scenario{border-color:#65578a;background:#342c55}.scenario.jonas{border-top-color:#e0b7ff}
+.trade,.due{background:#f8f4ff;color:#291d42;border-left-color:#9b63e8}.trade strong,.trade b,.due strong,.due b{color:#6d3fbb}
+.page-explorer{background:#282343;border-color:#65578a}.page-explorer strong{color:#fff}.page-explorer small{color:#d5cdec}
+.stat-link:hover,.stat-link:focus{border-color:#d2b9ff}
+.chart svg text,.chart text,.visual-chart text{fill:#f0ebfb!important}
