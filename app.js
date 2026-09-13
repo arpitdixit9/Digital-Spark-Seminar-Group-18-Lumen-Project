@@ -75,3 +75,26 @@ function addChatMessage(text,kind){const box=document.querySelector('#chatMessag
 function askChat(question){const clean=question.trim();if(!clean)return;addChatMessage(clean,'user');addChatMessage(chatReply(clean),'bot')}
 document.querySelectorAll('.chat-suggestions button').forEach(b=>b.onclick=()=>askChat(b.dataset.question));
 document.querySelector('#chatForm').onsubmit=e=>{e.preventDefault();const input=document.querySelector('#chatInput');askChat(input.value);input.value='';input.focus()};
+
+
+/* Interactive page navigation */
+(()=>{
+ const tabBar=document.querySelector('.tabs');
+ const tabs=[...document.querySelectorAll('.tabs button')];
+ if(!tabBar||!tabs.length)return;
+ const labels=['Vue d’ensemble','Prix & demande','Marché & canaux','Parties prenantes'];
+ tabs.forEach((b,i)=>{b.textContent=labels[i]||b.textContent;b.setAttribute('aria-label','Ouvrir '+(labels[i]||b.textContent));});
+ const explorer=document.createElement('div');
+ explorer.className='page-explorer';
+ explorer.innerHTML='<div><span class="page-kicker">EXPLORER LE DOSSIER</span><strong id="pageTitle">Vue d’ensemble</strong><small id="pageHint">Synthèse des statistiques et recommandation</small></div><div class="page-actions"></div>';
+ tabBar.parentNode.insertBefore(explorer,tabBar);
+ const actions=explorer.querySelector('.page-actions');
+ const buttons=labels.map((label,i)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.dataset.index=i;actions.appendChild(b);b.onclick=()=>openPage(i);return b;});
+ const titles=['Vue d’ensemble','Prix & demande','Marché & canaux','Parties prenantes'];
+ const hints=['Synthèse des statistiques et recommandation','Testez le prix et observez l’acceptation','Comparez marché, ventes et canaux','Préparez les décisions des parties prenantes'];
+ function openPage(i){const index=Math.max(0,Math.min(tabs.length-1,i));tabs[index].click();buttons.forEach((b,j)=>b.classList.toggle('active',j===index));explorer.querySelector('#pageTitle').textContent=titles[index];explorer.querySelector('#pageHint').textContent=hints[index];document.querySelector('.tabpane.active')?.focus?.({preventScroll:true});window.scrollTo({top:0,behavior:'smooth'});}
+ tabs.forEach((b,i)=>b.addEventListener('click',()=>{buttons.forEach((x,j)=>x.classList.toggle('active',j===i));explorer.querySelector('#pageTitle').textContent=titles[i];explorer.querySelector('#pageHint').textContent=hints[i];}));
+ document.querySelectorAll('#evidence .kpi').forEach((card,i)=>{card.classList.add('stat-link');card.setAttribute('role','button');card.setAttribute('tabindex','0');card.addEventListener('click',()=>openPage(i===0?0:i===1?1:i===2?2:3));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPage(i===0?0:i===1?1:i===2?2:3);}});});
+ document.querySelectorAll('.tabpane').forEach((pane,i)=>{pane.setAttribute('tabindex','-1');const footer=document.createElement('div');footer.className='page-footer';footer.innerHTML=(i>0?'<button type="button" data-prev="'+(i-1)+'">← Vue précédente</button>':'<span></span>')+(i<tabs.length-1?'<button type="button" data-next="'+(i+1)+'">Vue suivante →</button>':'<button type="button" data-next="0">Retour à l’accueil ↗</button>');pane.appendChild(footer);footer.querySelectorAll('button').forEach(b=>b.onclick=()=>openPage(Number(b.dataset.prev??b.dataset.next)));});
+ openPage(0);
+})();
